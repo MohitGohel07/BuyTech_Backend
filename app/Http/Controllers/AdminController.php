@@ -24,7 +24,7 @@ class AdminController extends Controller
     {
         return view('admin.login');
     }
-    
+
     public function users()
     {
         $users = DB::table('users')->where('role','2')->get();
@@ -48,11 +48,11 @@ class AdminController extends Controller
                 return redirect()->intended('/admin');
              }else{
                 return redirect()->back()->with([ 'emailnotfound' => 'Login Fail, please check email id']);
-             }                
+             }
         }
         $email = $request->input('email');
         $password = $request->input('password');
-   
+
         $user = User::where('email', '=', $email)->first();
         if (!$user) {
            return  redirect()->back()->with(['success'=>false, 'email' => 'Login Fail, please check email id']);
@@ -102,7 +102,7 @@ class AdminController extends Controller
             $array['updated_at'] = Carbon::now();
             DB::table('products')->insert($array);
         }
-       
+
         return redirect('admin/Products');
     }
 
@@ -133,7 +133,7 @@ class AdminController extends Controller
             $array['updated_at'] = Carbon::now();
             DB::table('categories')->insert($array);
         }
-       
+
         return redirect('admin/category');
     }
 
@@ -179,5 +179,5 @@ class AdminController extends Controller
         return view('admin.ordersComplated',compact('data'));
     }
 
-    
+
 }

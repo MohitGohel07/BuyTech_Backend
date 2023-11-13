@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TCS</title>
+    <title>Buy Tech</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -66,18 +66,18 @@
         </form>
     </div>
     <div class="mobile-author-actions"></div>
- 
-    
+
+
    <main class="main-content">
                 <div class="container-fluid">
                      @yield('content')
-                </div>                 
+                </div>
 
-   </main>    
+   </main>
 
 
 
-    
+
     <div id="overlayer">
         <div class="loader-overlay">
             <div class="dm-spin-dots spin-lg">

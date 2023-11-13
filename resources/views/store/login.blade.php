@@ -13,9 +13,10 @@
                         <div class="card border-0">
                             <div class="card-body">
                                 <div class="edit-profile__body">
-                                    <form action="{{URL::to('admin/admin_login')}}" method="POST">
+                                    <form action="{{URL::to('store/store_login')}}" method="POST">
                                         @csrf
                                         <div class="form-group mb-25">
+                                            <div class="mb-5"><h3>Store Login</h3></div>
                                             <label for="username">Username or Email Address</label>
                                             <input type="text" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" id="username"
                                                name="email" placeholder="name@example.com">
@@ -103,12 +104,12 @@
                                 </div>
                             </div>
                             <div class="admin-topbar">
-                                {{-- <p class="mb-0">
+                                <p class="mb-0">
                                     Don't have an account?
-                                    <a href="sign-up.html" class="color-primary">
-                                        Sign up
+                                    <a href="{{URL::to('store/create')}}" class="color-primary">
+                                        Create Store
                                     </a>
-                                </p> --}}
+                                </p>
                             </div><!-- End: .admin-topbar  -->
                         </div><!-- End: .card -->
                     </div><!-- End: .edit-profile -->

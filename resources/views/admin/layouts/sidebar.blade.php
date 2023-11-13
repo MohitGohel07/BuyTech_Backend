@@ -14,12 +14,22 @@
                         </li>
                     </ul>
                 </li>
+                @if(Auth::user()->role == 1)
                 <li class="@if (Request::is('admin/users')) active @endif  ">
                     <a href="{{ URL::to('admin/users') }}">
                         <span class="nav-icon uil uil-users-alt"></span>
                         <span class="menu-text">Users</span>
                     </a>
                 </li>
+
+                <li class="@if (Request::is('store/users')) active @endif  ">
+                    <a href="{{ URL::to('store/users') }}">
+                        <span class="nav-icon uil uil-users-alt"></span>
+                        <span class="menu-text">Store Users</span>
+                    </a>
+                </li>
+
+                @endif
                 <li class="@if (Request::is('admin/category/*') || Request::is('admin/category')) active @endif  ">
                     <a href="{{ URL::to('admin/category') }}">
                         <span class="nav-icon uil uil-window"></span>

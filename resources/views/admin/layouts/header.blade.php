@@ -170,7 +170,7 @@
                                             class="rounded-circle">
                                     </div>
                                     <div>
-                                        <h6>Rabbi Islam Rony</h6>
+                                        <h6>{{!empty($name)? $name : ''}}</h6>
                                         <span>UI Designer</span>
                                     </div>
                                 </div>
@@ -198,8 +198,14 @@
                                                 <i class="uil uil-bell"></i> Help</a>
                                         </li>
                                     </ul>
+                                    @if(Auth::user()->role == 1)
                                     <a href="{{URL::to('admin/signOut')}}" class="nav-author__signout" >
                                         <i class="uil uil-sign-out-alt"></i> Sign Out</a>
+                                    @endif
+                                    @if(Auth::user()->role == 3)
+                                    <a href="{{URL::to('store/signOut')}}" class="nav-author__signout" >
+                                        <i class="uil uil-sign-out-alt"></i> Sign Out</a>
+                                    @endif
                                 </div>
                             </div>
                             <!-- ends: .dropdown-wrapper -->

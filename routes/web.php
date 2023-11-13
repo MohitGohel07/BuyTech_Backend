@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ImportExportController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,7 @@ use App\Http\Controllers\StripePaymentController;
 Route::get('stripe',[StripePaymentController::class,'stripe']);
 Route::post('stripe',[StripePaymentController::class,'stripePost'])->name('stripe.post');
 
-Route::get('invoice/{id}', [InvoiceController::class, 'Invoice']); 
+Route::get('invoice/{id}', [InvoiceController::class, 'Invoice']);
 
 
 Route::get('/',[UserController::class,'index']);
@@ -87,5 +88,17 @@ Route::prefix('admin')->group(function () {
     Route::get('exportdemo',[ImportExportController::class,'exportdemo']);
 
 
-   
+
+});
+
+Route::get('store',[StoreController::class,'dashboard']);
+Route::prefix('store')->group(function() {
+    Route::get('login',[StoreController::class,'storelogin']);
+    Route::get('create',[StoreController::class,'create']);
+    Route::get('users',[StoreController::class,'users']);
+    Route::post('create_store',[StoreController::class,'create_store']);
+    Route::get('signOut',[AdminController::class,'logout']);
+    Route::post('store_login',[StoreController::class,'store_login']);
+
+    Route::get('accept/{id}',[StoreController::class,'accept']);
 });

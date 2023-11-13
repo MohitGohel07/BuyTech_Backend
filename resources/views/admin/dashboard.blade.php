@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 @section('content')
     {{-- ====================main content start=========== --}}
-
+ <b>Welcome</b> {{!empty($name)? $name : ''}}
     <div class="row">
         <div class="col-xxl-12 mb-25">
             {{-- <div class="card banner-feature--18 new d-flex bg-white">
