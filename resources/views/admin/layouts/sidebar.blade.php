@@ -30,18 +30,22 @@
                 </li>
 
                 @endif
+
+                @if(Auth::user()->role == 1)
                 <li class="@if (Request::is('admin/category/*') || Request::is('admin/category')) active @endif  ">
                     <a href="{{ URL::to('admin/category') }}">
                         <span class="nav-icon uil uil-window"></span>
                         <span class="menu-text">category</span>
                     </a>
                 </li>
+
                 <li class="@if (Request::is('admin/Products/*') || Request::is('admin/Products')) active @endif  ">
                     <a href="{{ URL::to('admin/Products') }}">
                         <span class="nav-icon uil uil-window"></span>
                         <span class="menu-text">Products</span>
                     </a>
                 </li>
+
                 <li class="@if (Request::is('admin/orders') || Request::is('admin/orders')) active @endif  ">
                     <a href="{{ URL::to('admin/orders') }}">
                         <span class="nav-icon uil uil-window"></span>
@@ -49,12 +53,45 @@
                     </a>
                 </li>
                 </li>
-                <li class="@if (Request::is('admin/orders/complated') || Request::is('admin/orders/complated')) active @endif  ">
+                {{--  <li class="@if (Request::is('admin/orders/complated') || Request::is('admin/orders/complated')) active @endif  ">
                     <a href="{{ URL::to('admin/orders/complated') }}">
                         <span class="nav-icon uil uil-window"></span>
                         <span class="menu-text">Complated Orders</span>
                     </a>
+                </li>  --}}
+                @endif
+
+                @if(Auth::user()->role == 3)
+                <li class="@if (Request::is('store/category/*') || Request::is('store/category')) active @endif  ">
+                    <a href="{{ URL::to('store/category') }}">
+                        <span class="nav-icon uil uil-window"></span>
+                        <span class="menu-text">category</span>
+                    </a>
                 </li>
+
+                <li class="@if (Request::is('store/Products/*') || Request::is('store/Products')) active @endif  ">
+                    <a href="{{ URL::to('store/Products') }}">
+                        <span class="nav-icon uil uil-window"></span>
+                        <span class="menu-text">Products</span>
+                    </a>
+                </li>
+
+                <li class="@if (Request::is('store/orders') || Request::is('store/orders')) active @endif  ">
+                    <a href="{{ URL::to('store/orders') }}">
+                        <span class="nav-icon uil uil-window"></span>
+                        <span class="menu-text">Orders</span>
+                    </a>
+                </li>
+                </li>
+                {{--  <li class="@if (Request::is('admin/orders/complated') || Request::is('admin/orders/complated')) active @endif  ">
+                    <a href="{{ URL::to('admin/orders/complated') }}">
+                        <span class="nav-icon uil uil-window"></span>
+                        <span class="menu-text">Complated Orders</span>
+                    </a>
+                </li>  --}}
+                @endif
+
+
                 <li class="@if (Request::is('admin/csv') || Request::is('admin/csv')) active @endif  ">
                     <a href="{{ URL::to('admin/csv') }}">
                         <span class="nav-icon uil uil-window"></span>

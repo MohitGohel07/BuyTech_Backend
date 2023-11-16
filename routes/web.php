@@ -101,4 +101,22 @@ Route::prefix('store')->group(function() {
     Route::post('store_login',[StoreController::class,'store_login']);
 
     Route::get('accept/{id}',[StoreController::class,'accept']);
+
+
+    Route::get('category',[StoreController::class,'category']);
+    Route::get('category/add/{id?}',[StoreController::class,'category_add']);
+    Route::post('category/add',[StoreController::class,'category_store']);
+    Route::get('category/remove/{id}',[StoreController::class,'category_remove']);
+
+
+    Route::get('Products',[StoreController::class,'Products']);
+    Route::get('Products/add/{id?}',[StoreController::class,'Products_add']);
+    Route::post('Products/add',[StoreController::class,'Products_store']);
+    Route::get('Products/remove/{id}',[StoreController::class,'Products_remove']);
+
+
+    Route::get('orders',[StoreController::class,'orders']);
+    Route::get('orders/accept/{id}',[StoreController::class,'order_accept']);
+    Route::get('order/complate/{id}',[StoreController::class,'order_complate']);
+    Route::get('orders/complated',[StoreController::class,'order_complated']);
 });

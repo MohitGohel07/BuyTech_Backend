@@ -139,6 +139,7 @@ class ApiController extends Controller
         'image' => $request->image,
         // 'order_status' => $request->order_status,
         'payment_methods' => $request->payment_methods,
+        'product_userId' => $request->product_userId,
         ]);
         $success = true;
         $message = 'Insert Order added successfully';
@@ -148,7 +149,9 @@ class ApiController extends Controller
 
     public function show_order($user_id){
         $order = DB::table('order')->where('user_id',$user_id)->get();
-        echo $order;
+        $success = true;
+        $message = 'Show order successfully.';
+        return response()->json(['success'=>$success, 'data'=>$order, 'message'=>$message]);
     }
 
     public function insert_wishlist(Request $request){

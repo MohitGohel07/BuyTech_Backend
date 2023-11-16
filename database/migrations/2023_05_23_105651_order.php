@@ -20,11 +20,12 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('order_status')->default('Pending')->nullable();
             $table->string('payment_methods')->nullable();
+            $table->string('product_userId')->nullable();
             $table->string('count')->default(1)->nullable();
             $table->timestamps();
         });
 
-        
+
     }
 
     /**

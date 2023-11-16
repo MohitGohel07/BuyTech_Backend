@@ -7,7 +7,7 @@
             <h6>@if(!empty($data)) Update @else Add @endif Products</h6>
         </div>
         <div class="card-body pb-md-50">
-            <form method="POST" action="{{URL::to('admin/category/add')}}" enctype="multipart/form-data">
+            <form method="POST" action="{{URL::to('store/category/add')}}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="row mx-n15">
