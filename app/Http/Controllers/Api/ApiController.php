@@ -355,5 +355,25 @@ class ApiController extends Controller
             return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
         }
     }
+
+
+    public function productsallgett(){
+        $categories = DB::table('categories')->get();
+        $result = [];
+
+        foreach ($categories as $category) {
+            $products = DB::table('products')->where('category_id', $category->id)->get();
+            $result[] = [
+                // 'category_id' => $category->id,
+                'category_id' => $category->brand,
+                'products' => $products,
+            ];
+        }
+
+        $success = true;
+        $message = 'Show order successfully.';
+        return response()->json(['success' => $success, 'data' => $result, 'message' => $message]);
+    }
+
     }
 

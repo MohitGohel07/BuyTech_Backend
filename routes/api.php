@@ -43,6 +43,8 @@ route::get('total_price/{user_id}',[ApiController::class, 'total_price']);
 route::get('total_quantity/{user_id}',[ApiController::class, 'total_quantity']);
 route::get('show_order/{user_id}',[ApiController::class, 'show_order']);
 
+route::get('mohitt',[ApiController::class, 'productsallgett']);
+
 route::get('all_product',[ApiController::class, 'all_product']);
 
 Route::post('register',[ApiController::class,'register']);
